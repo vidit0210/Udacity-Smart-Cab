@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>smartcab</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>smartcab</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -12003,9 +11976,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>visuals.py:74: FutureWarning: pd.rolling_mean is deprecated for Series and will be removed in a future version, replace with 
 	Series.rolling(window=10,center=False).mean()
@@ -12032,9 +12003,7 @@ visuals.py:86: FutureWarning: pd.rolling_mean is deprecated for Series and will 
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -13249,7 +13218,17 @@ lpmZmZmZWZU4wTIzMzMzM6uS/w+ehtao0JF1/wAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-The previous paragraph raises a good point. I think that the agent would need thousands of trials to be perfectly accurate with it's safety and reliability. With my chosen tuple (waypoint, light, oncoming, left) there are (4, 2, 4, 4) different variables. This would be 128 different scenarios that need to be trained.</p>
+The total number of states is defined by the product of the number of possible states for each feature. We estimate the total number of states as:</p>
+<blockquote><p>WAYPOINT x LIGHTS_STATES x INPUT[LEFT] x INPUT[ONCOMING]</p>
+</blockquote>
+<ul>
+<li>WAIPOINT: 3 (left, right, forward)</li>
+<li>LIGHTS_STATES:   2 (green, red)</li>
+<li>INPUT[LEFT]:     4 (None, left, right, forwards)</li>
+<li>INPUT[ONCOMING]: 4 (None, left, right, forwards)</li>
+</ul>
+<p><br>
+Therefore, the total number of states is 96. Figuring out the policy for each possible state will take some time, because the Smartcab should visit each state  and try different actions to learn the reward policy.</p>
 
 </div>
 </div>
@@ -13327,9 +13306,7 @@ $$ \epsilon_{t+1} = \epsilon_{t} - 0.05, \hspace{10px}\textrm{for trial number }
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -14638,9 +14615,7 @@ $$ \epsilon = a^t, \textrm{for } 0 < a < 1 \hspace{50px}\epsilon = \frac{1}{t^2}
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -16904,14 +16879,79 @@ zrka+X+Sf7H2YySpHQAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<ul>
-<li>I revised my code to use the suggested sigmoid function: <strong>self.epsilon = 1 - (1/(1+math.exp(-1<em>k</em>self.alpha*(self.trial_count-t0))))</strong> with k=0.005 and t0 = 0.5.</li>
-<li>It ran for about 1400 training trials.</li>
-<li>I used a 0.65 alpha value. I thought that a semi higher alpha value would help it to use more recent data that it learned from running the algorithm. In the beginning the algorithm is mainly just following the epsilon exploration factor so I wanted it to use what it had learned. For epsilon tolerance I used 0.01. Anything lower and the simulation runs for too long. </li>
-<li>A lot of improvement was made. I was able to get both safety up to A+ and reliability up to A ranks from A+ and B ranks. I'm not sure how the reliability is considered A rank given that after approximately 500 training trials the rate of reliability was near 90-100%. </li>
-<li>Yes I do think that the driving agent successfully learned an appropriate policy. The total bad actions are around 2% which is very good chances for a Smartcab.</li>
-<li>I am satisfied. Maybe running for even more trials with a lower k value would allow for the Smartcab to learn even more actions.</li>
-</ul>
+<p>Summary table for all models used:</p>
+<table>
+<thead><tr>
+<th>model</th>
+<th>epsilon</th>
+<th>tolerance</th>
+<th>alpha</th>
+<th>a</th>
+<th>safety</th>
+<th>reliability</th>
+<th>trainings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linear</td>
+<td>$$\epsilon = \epsilon -0.005\hspace{25px}$$</td>
+<td>0.0001</td>
+<td>0.06</td>
+<td>-</td>
+<td>A+</td>
+<td>A+</td>
+<td>200</td>
+</tr>
+<tr>
+<td>exponential</td>
+<td>$$\epsilon = e^{-at}\hspace{50px}$$</td>
+<td>0.0001</td>
+<td>0.06</td>
+<td>0.01</td>
+<td>A+</td>
+<td>A</td>
+<td>~700</td>
+</tr>
+<tr>
+<td>exponential</td>
+<td>$$\epsilon = a^t\hspace{25px}$$</td>
+<td>0.0001</td>
+<td>0.06</td>
+<td>0.99</td>
+<td>A+</td>
+<td>A</td>
+<td>~700</td>
+</tr>
+<tr>
+<td>square root</td>
+<td>$$\epsilon = \frac{a}{\sqrt{k}} -0.5\hspace{50px} $$</td>
+<td>0.01</td>
+<td>0.06</td>
+<td>0.5</td>
+<td>A+</td>
+<td>A</td>
+<td>~2500</td>
+</tr>
+<tr>
+<td>trigonometric</td>
+<td>$$ \epsilon = \cos(at) +0.5\hspace{50px}$$</td>
+<td>0.01</td>
+<td>0.06</td>
+<td>0.001</td>
+<td>A+</td>
+<td>A</td>
+<td>~2000</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+I used some combinations of parameters (tolerance, alpha and a) to get the result after a reasonable amount of training events. So, for the linear function I changed the parameter from -0.05 to -0.05. For the square root function a and tolerance had been changed which helped to reduce the total number of training examples needed from 10M to 2.5K. 
+<br><br>
+According to the charts above the rolling relative frequency of bad actions goes down imitating the chart for exploration factor. 
+There is a tremendous increase in terms safety and reliability. The Smartcab managed to achieve A/A+ grades, comparing to F in  case of the default Q-Learner. 
+Taking into account the rewards, the linear and exponential decay functions got into a positive reward sector after ~180 training examples, while the square root function managed to achieve it almost immediately. On the contrary the trigonometric function berely reached the positive zone.</p>
+<p>I'm completely satisfied with the learning rate and only partually with the safety and reliability ratings, there is a room for improvement here. Obviously the Smartcab is not ready for usage in real world, it still causes road accidents.</p>
 
 </div>
 </div>
@@ -16941,35 +16981,34 @@ zrka+X+Sf7H2YySpHQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> 
-My states have been defined as: {"waypoint", "light", "oncoming", "left"}
-A few examples of appropriate states would be:</p>
+<p><strong>Answer:</strong></p>
+<p>In most cases the policy does make sense.
+Provide a few examples (using the states you've defined) of what an optimal policy for this problem would look like. 
+The state dictionary is defined like this:</p>
+<p>{ waypoint: value, light: value, oncoming: value, left: value}</p>
+<p>So, for red light we should always have negative reward for going forward. And it's true for all our cases. Here is an example:</p>
+<p>('forward', 'red', 'right', None) --&gt; None</p>
 <ul>
-<li><p>('left', 'red', 'forward', 'right') : None</p>
-<ul>
-<li>Most "red" policies have None as the highest Q value. With others being highly negative. This makes sense for it to stay until the light turns green.</li>
+<li>forward : -10.42</li>
+<li>right : 0.62</li>
+<li>None : 1.68</li>
+<li>left : -10.38</li>
 </ul>
-</li>
-<li><p>('left', 'green', None, 'right') : Left</p>
+<p>Here the Smartcab gets the highest reward for going forward which is its waypoint. Hence the agents executes the optimal policy:</p>
+<p>('forward', 'green', None, 'right') --&gt; forward</p>
 <ul>
-<li>The agent will choose Left with Q value 1.35 which is the correct action. If the light is green and no one is there then the agent is free to make the left turn.</li>
+<li>forward : 1.34</li>
+<li>right : 0.67</li>
+<li>None : -4.65</li>
+<li>left : -20.10</li>
 </ul>
-</li>
-<li><p>('right', 'red', 'forward', None) : Right</p>
+<p>In the last case the policy tells to go forward while the correct action will be to turn right.</p>
+<p>('right', 'green', 'right', 'forward') --&gt; forward</p>
 <ul>
-<li>The agent should turn right here but the Q-value for None is slightly higher in my tests than the Q-value for right so the agent will stay still. This directly impacts the reliability score.</li>
-</ul>
-</li>
-<li><p>Directly from the txt file: 
-   -('forward', 'red', 'right', 'right')
--- forward : -6.17
--- None : 2.35
--- right : 0.70
--- left : -34.63</p>
-<ul>
-<li>This shows that it is definitely the best action to do nothing at this point in time. If the light is red and you need to go forward you must wait for the light to turn green to go forward.</li>
-</ul>
-</li>
+<li>forward : 0.97 </li>
+<li>right : 0.81 </li>
+<li>None : -0.23 </li>
+<li>left : -23.98</li>
 </ul>
 
 </div>
@@ -17034,8 +17073,4 @@ A few examples of appropriate states would be:</p>
     </div>
   </div>
 </body>
-
- 
-
-
 </html>
